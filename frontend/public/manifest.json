@@ -1,0 +1,46 @@
+﻿{
+  "manifest_version": 3,
+  "name": "LeetTow AI Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered hints and similar problems for LeetCode and coding platforms.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://www.leetcode.com/*",
+    "https://hackerrank.com/*",
+    "https://codeforces.com/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "LeetTow AI Assistant",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://www.leetcode.com/*",
+        "https://hackerrank.com/*",
+        "https://codeforces.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
