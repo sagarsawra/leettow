@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { sendMessage, isExtensionContext } from "../utils/messaging";
 
 const DEV_MOCK_PROBLEM = {
@@ -21,6 +21,7 @@ export default function useProblemData() {
       setError(null);
 
       if (!isExtensionContext()) {
+        // Dev mode: use mock data after a short delay
         setTimeout(() => {
           if (!cancelled) {
             setProblem(DEV_MOCK_PROBLEM);
@@ -33,8 +34,12 @@ export default function useProblemData() {
       try {
         const response = await sendMessage("GET_PROBLEM_DATA");
         if (!cancelled) {
-          setProblem(response.data);
-          setStatus("ready");
+          if (response.data) {
+            setProblem(response.data);
+            setStatus("ready");
+          } else {
+            setStatus("no-problem");
+          }
         }
       } catch (err) {
         if (!cancelled) {

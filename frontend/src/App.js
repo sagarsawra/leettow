@@ -1,18 +1,25 @@
-﻿import React from "react";
+import React from "react";
 import Header from "./components/Header/Header";
 import CurrentProblem from "./components/CurrentProblem/CurrentProblem";
 import HintSection from "./components/HintSection/HintSection";
 import SimilarProblems from "./components/SimilarProblems/SimilarProblems";
 import StatusBar from "./components/StatusBar/StatusBar";
 import useProblemData from "./hooks/useProblemData";
-import useHint from "./hooks/useHint";
-import useSimilarProblems from "./hooks/useSimilarProblems";
+import useAnalysis from "./hooks/useAnalysis";
 import "./styles/app.css";
 
 export default function App() {
   const { problem, status, error } = useProblemData();
-  const { hint, hintLevel, hintLoading, revealNextHint, resetHint } = useHint(problem?.title);
-  const { problems: similarProblems, loading: similarLoading } = useSimilarProblems(problem?.title);
+  const {
+    hint,
+    hintLevel,
+    hintLoading,
+    revealNextHint,
+    resetHint,
+    similarProblems,
+    similarLoading,
+    analysisError,
+  } = useAnalysis(problem);
 
   return (
     <div className="app">
@@ -32,6 +39,13 @@ export default function App() {
           loading={similarLoading}
           hasProblem={!!problem}
         />
+        {analysisError && (
+          <div className="section-card" style={{ borderColor: "var(--color-error)" }}>
+            <p style={{ fontSize: "var(--text-sm)", color: "var(--color-error)" }}>
+              Backend: {analysisError}. Showing fallback hints.
+            </p>
+          </div>
+        )}
       </main>
       <StatusBar status={status} error={error} />
     </div>

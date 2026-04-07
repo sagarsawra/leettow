@@ -1,5 +1,5 @@
-﻿/**
- * aiClient.js â€” Low-level HTTP adapter for the AI microservice.
+/**
+ * aiClient.js — Low-level HTTP adapter for the AI microservice.
  * The only file that knows the AI service wire protocol.
  */
 const axios    = require("axios");
@@ -36,9 +36,26 @@ client.interceptors.response.use(
   }
 );
 
+/**
+ * Request hints from the AI microservice.
+ * Sends { title, description?, difficulty? } to POST /generate-hint
+ * Expects { success: true, data: { hintLevels: string[] } }
+ */
 async function requestHints(problemData) {
-  const { data } = await client.post("/hints", { problem: problemData });
-  return data.hints;
+  const payload = {
+    title:       problemData.title,
+    description: problemData.description || "",
+    difficulty:  problemData.difficulty || "Unknown",
+  };
+
+  const { data } = await client.post("/generate-hint", payload);
+
+  if (!data?.success || !data?.data?.hintLevels) {
+    logger.warn("AI service returned unexpected response shape", { data });
+    return null;
+  }
+
+  return data.data.hintLevels;
 }
 
 module.exports = { requestHints };

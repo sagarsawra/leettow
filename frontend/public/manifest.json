@@ -1,4 +1,4 @@
-﻿{
+{
   "manifest_version": 3,
   "name": "LeetTow AI Assistant",
   "version": "1.0.0",
@@ -20,8 +20,7 @@
     }
   },
   "background": {
-    "service_worker": "background.js",
-    "type": "module"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -41,6 +40,6 @@
     "128": "icons/icon128.png"
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' http://localhost:3001"
   }
 }

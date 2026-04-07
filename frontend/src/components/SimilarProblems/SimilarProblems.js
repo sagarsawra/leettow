@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import "./SimilarProblems.css";
 
 const DIFFICULTY_CLS = {
@@ -35,12 +35,12 @@ export default function SimilarProblems({ problems, loading, hasProblem }) {
             <li key={p.id}>
               <a
                 className="problem-item"
-                href={p.url}
+                href={p.url || p.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${p.title} - ${p.difficulty}`}
               >
-                <span className="problem-item__number">#{p.number}</span>
+                {p.number != null && <span className="problem-item__number">#{p.number}</span>}
                 <span className="problem-item__title">{p.title}</span>
                 <span className={`problem-item__difficulty ${DIFFICULTY_CLS[p.difficulty] ?? ""}`}>
                   {p.difficulty}

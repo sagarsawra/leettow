@@ -2,14 +2,14 @@
   "name": "leettow",
   "version": "1.0.0",
   "description": "AI assistant Chrome Extension for coding platforms",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
+    "build": "cross-env INLINE_RUNTIME_CHUNK=false react-scripts build",
     "build:ext": "cross-env INLINE_RUNTIME_CHUNK=false react-scripts build"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
-    "eslint": "^8.57.1",
-    "prettier": "^3.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1"
