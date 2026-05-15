@@ -1,5 +1,5 @@
 ﻿/**
- * rateLimiter.js â€” express-rate-limit configured via env vars.
+ * rateLimiter.js express-rate-limit configured via env vars.
  */
 const rateLimit = require("express-rate-limit");
 const config    = require("../../config");

@@ -1,5 +1,5 @@
 ﻿/**
- * hintParser.js â€” Parses and validates the raw LLM response.
+ * hintParser.js — Parses and validates the raw LLM response.
  *
  * Why a dedicated parser?
  *   LLMs are non-deterministic. Even with json_object mode and strict prompting,
@@ -14,6 +14,15 @@ const MIN_HINT_LENGTH = 20;
 const MAX_HINT_LENGTH = 600;
 
 /**
+ * Safely extract JSON from a possibly messy LLM response (Groq compatibility).
+ * Does NOT alter original logic — just ensures valid JSON is passed to parser.
+ */
+function extractJSON(rawContent) {
+  const match = rawContent.match(/\{[\s\S]*\}/);
+  return match ? match[0] : rawContent;
+}
+
+/**
  * Parse the raw JSON string from the LLM into a validated hints array.
  * @param {string} rawContent
  * @returns {{ valid: boolean, hints: string[]|null, reason: string|null }}
@@ -21,7 +30,8 @@ const MAX_HINT_LENGTH = 600;
 function parseHintResponse(rawContent) {
   let parsed;
   try {
-    parsed = JSON.parse(rawContent);
+    const cleanContent = extractJSON(rawContent); // ✅ Added safety layer
+    parsed = JSON.parse(cleanContent);
   } catch (e) {
     logger.warn("LLM response is not valid JSON", { raw: rawContent.slice(0, 200) });
     return { valid: false, hints: null, reason: "Response is not valid JSON." };

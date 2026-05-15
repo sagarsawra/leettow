@@ -5,6 +5,7 @@ const DEV_MOCK_PROBLEM = {
   title: "Longest Consecutive Sequence",
   difficulty: "Medium",
   tags: ["Array", "Hash Table", "Union Find"],
+  description: "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence. You must write an algorithm that runs in O(n) time.",
   detectedAt: Date.now(),
 };
 

@@ -1,5 +1,5 @@
-﻿/**
- * contentScript.js â€” Injected into coding platform pages.
+/**
+ * contentScript.js — Injected into coding platform pages.
  * Detects the current problem and notifies the background service worker.
  */
 (function () {
@@ -15,6 +15,14 @@
     'h4[class*="QuestionTitle"]',
   ];
 
+  const DESCRIPTION_SELECTORS = [
+    '[data-cy="question-content"]',
+    '.elfjS',
+    'div[class*="content__"] .notranslate',
+    '.question-content__JfgR',
+    '.description__24sA',
+  ];
+
   function extractTitle() {
     for (const sel of TITLE_SELECTORS) {
       const el = document.querySelector(sel);
@@ -26,7 +34,7 @@
 
   function extractDifficulty() {
     const el = document.querySelector(
-      ".text-difficulty-easy, .text-difficulty-medium, .text-difficulty-hard"
+      ".text-difficulty-easy, .text-difficulty-medium, .text-difficulty-hard, [class*='difficulty']"
     );
     if (!el) return "Unknown";
     const t = el.textContent.trim().toLowerCase();
@@ -43,11 +51,29 @@
       .slice(0, 5);
   }
 
+  function extractDescription() {
+    for (const sel of DESCRIPTION_SELECTORS) {
+      const el = document.querySelector(sel);
+      if (el?.textContent?.trim()) {
+        return el.textContent.trim().slice(0, 800);
+      }
+    }
+    return "";
+  }
+
   function detectAndReport() {
     const title = extractTitle();
     if (!title) return;
     chrome.runtime.sendMessage(
-      { type: "PROBLEM_DETECTED", payload: { title, difficulty: extractDifficulty(), tags: extractTags() } },
+      {
+        type: "PROBLEM_DETECTED",
+        payload: {
+          title,
+          difficulty: extractDifficulty(),
+          tags: extractTags(),
+          description: extractDescription(),
+        },
+      },
       () => void chrome.runtime.lastError
     );
   }

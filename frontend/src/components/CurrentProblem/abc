@@ -1,0 +1,117 @@
+Question 1
+What is the primary goal of generative AI as described in the overview?
+
+
+
+To improve machine learning models' accuracy
+
+To generate content based on user interests
+
+To reduce the computational cost of AI systems
+
+To enhance the security of online transactions
+
+1 point
+2.
+Question 2
+Which group benefited the most from AI assistance in writing tasks?
+
+
+
+Writers with poor initial writing scores
+
+Experienced writers with high initial scores
+
+All writers equally
+
+Writers who did not use AI
+
+1 point
+3.
+Question 3
+In the study involving GitHub Copilot, what was the effect of AI on software development tasks?
+
+
+
+Developers completed tasks significantly faster with AI assistance
+
+No impact on task completion times
+
+Increased complexity of tasks
+
+Decrease in code quality
+
+1 point
+4.
+Question 4
+How can enterprises customize generative AI models for their specific use cases?
+
+
+
+By using techniques like finetuning and RAG
+
+By developing their own GPUs
+
+By building their own cloud infrastructure
+
+By creating their own foundation models from scratch
+
+1 point
+5.
+Question 5
+What presents a high barrier to entry in the market for foundation models?
+
+
+
+The lack of interest in AI technologies
+
+The abundance of cloud providers
+
+The extensive resources needed for model training
+
+The simplicity of model development
+
+1 point
+6.
+Question 6
+What is 'chain of thought prompting' and its purpose?
+
+
+
+Providing examples to help the model reason better in formulating answers
+
+A technique to speed up the model's response time
+
+A strategy to lower the cost of using the model
+
+A method to reduce the size of the model
+
+1 point
+7.
+Question 7
+Which of the following is a challenge associated with using retrieval augmented generation (RAG)?
+
+
+
+It can increase variable costs due to the need to send additional information with each query
+
+It reduces the amount of data necessary for the model's operation
+
+It decreases the model's accuracy
+
+It simplifies the model's architecture
+
+1 point
+8.
+Question 8
+How did Bloomberg GPT achieve better performance on financial tasks compared to general-purpose models?
+
+
+
+By having more parameters than any other model
+
+By deploying the model to more users
+
+By using general data available to everyone
+
+Through training on a curated, domain-specific dataset

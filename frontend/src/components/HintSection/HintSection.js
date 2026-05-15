@@ -13,7 +13,7 @@ export default function HintSection({ hint, hintLevel, loading, onReveal, onRese
       <div className="hint-section__header">
         <p className="section-title">AI Hint</p>
         {hintLevel > 0 && (
-          <span className="hint-level-badge">Level {hintLevel} â€” {LEVEL_LABELS[hintLevel]}</span>
+          <span className="hint-level-badge">Level {hintLevel}{LEVEL_LABELS[hintLevel]}</span>
         )}
       </div>
 

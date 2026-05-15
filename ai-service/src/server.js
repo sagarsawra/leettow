@@ -6,7 +6,7 @@ const server = app.listen(config.port, () => {
   logger.info("LeetTow AI service running", {
     port:  config.port,
     env:   config.env,
-    model: config.openai.model,
+    model: config.groq.model,
   });
 });
 
