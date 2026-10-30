@@ -3,9 +3,9 @@ const app     = require("../src/app");
 
 jest.mock("../src/services/ai/aiService", () => ({
   getHints: jest.fn().mockResolvedValue([
-    "Hint level 1 â€” vague",
-    "Hint level 2 â€” directional",
-    "Hint level 3 â€” algorithmic",
+    "Hint level 1 vague",
+    "Hint level 2 directional",
+    "Hint level algorithmic",
   ]),
 }));
 
