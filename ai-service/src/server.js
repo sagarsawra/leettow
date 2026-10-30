@@ -11,7 +11,7 @@ const server = app.listen(config.port, () => {
 });
 
 function shutdown(signal) {
-  logger.info(`${signal} received â€” shutting down`);
+  logger.info(`${signal} received  shutting down`);
   server.close(() => { logger.info("Server closed"); process.exit(0); });
   setTimeout(() => process.exit(1), 10_000);
 }

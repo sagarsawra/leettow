@@ -1,5 +1,5 @@
 ﻿/**
- * routes/index.js â€” Aggregates all route modules.
+ * routes/index.js  Aggregates all route modules.
  */
 const { Router }    = require("express");
 const requestLogger = require("../middleware/requestLogger");

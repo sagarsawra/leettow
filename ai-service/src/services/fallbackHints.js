@@ -1,5 +1,5 @@
 ﻿/**
- * fallbackHints.js â€” Deterministic difficulty-aware fallback hints.
+ * fallbackHints.js  Deterministic difficulty-aware fallback hints.
  *
  * Used when the LLM call fails, times out, or returns unparseable output.
  * A degraded-but-functional response is always better than an error
@@ -14,7 +14,7 @@ const FALLBACKS = {
   ],
   Medium: [
     "Step back from the details. What is the core decision this problem is asking you to make at each step?",
-    "Consider whether pre-processing the input â€” sorting it, indexing it, or transforming it â€” changes what operations become cheap versus expensive.",
+    "Consider whether pre-processing the input  sorting it, indexing it, or transforming it  changes what operations become cheap versus expensive.",
     "Think about the trade-off between time and space. Accepting extra memory often unlocks a significantly faster traversal strategy. What would you store, and when would you look it up?",
   ],
   Hard: [

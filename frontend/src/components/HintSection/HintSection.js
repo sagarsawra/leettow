@@ -30,7 +30,7 @@ export default function HintSection({ hint, hintLevel, loading, onReveal, onRese
 
       {!hasHint && !loading && (
         <p className="hint-section__placeholder">
-          {disabled ? "Hints unlock once a problem is detected." : "Hints are revealed progressively â€” no spoilers."}
+          {disabled ? "Hints unlock once a problem is detected." : "Hints are revealed progressively  no spoilers."}
         </p>
       )}
 

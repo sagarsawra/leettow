@@ -1,5 +1,5 @@
 ﻿/**
- * hint.validator.js â€” Joi schema for POST /generate-hint requests.
+ * hint.validator.js  Joi schema for POST /generate-hint requests.
  */
 const Joi = require("joi");
 

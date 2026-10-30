@@ -1,5 +1,5 @@
 ﻿/**
- * health.controller.js â€” GET /api/health
+ * health.controller.js  GET /api/health
  */
 const { ok }   = require("../../utils/respond");
 const config   = require("../../config");

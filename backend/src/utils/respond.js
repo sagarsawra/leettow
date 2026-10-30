@@ -1,5 +1,5 @@
 ﻿/**
- * respond.js â€” Normalised API response helpers.
+ * respond.js  Normalised API response helpers.
  */
 function ok(res, data, statusCode = 200) {
   return res.status(statusCode).json({ success: true, data });

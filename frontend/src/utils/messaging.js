@@ -1,5 +1,5 @@
 ﻿/**
- * messaging.js â€” Promise wrappers around chrome.runtime.sendMessage.
+ * messaging.js  Promise wrappers around chrome.runtime.sendMessage.
  */
 
 export function sendMessage(type, payload = {}) {

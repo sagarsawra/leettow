@@ -1,5 +1,5 @@
 ﻿/**
- * config/logger.js â€” Lightweight structured logger.
+ * config/logger.js  Lightweight structured logger.
  * Swap for Winston/Pino in production without touching callers.
  */
 const config = require("./index");

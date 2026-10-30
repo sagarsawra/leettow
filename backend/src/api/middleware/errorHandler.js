@@ -1,5 +1,5 @@
 ﻿/**
- * errorHandler.js â€” Centralised Express error handler.
+ * errorHandler.js  Centralised Express error handler.
  */
 const logger   = require("../../config/logger");
 const AppError = require("../../utils/AppError");

@@ -1,6 +1,6 @@
 ﻿const { getSimilarProblems, scoreCandidate } = require("../src/services/recommender");
 
-describe("Recommender â€” getSimilarProblems", () => {
+describe("Recommender  getSimilarProblems", () => {
   it("returns up to 5 results by default", () => {
     const results = getSimilarProblems({ title: "Two Sum", difficulty: "Easy", tags: ["Array","Hash Table"] });
     expect(results.length).toBeLessThanOrEqual(5);
@@ -32,7 +32,7 @@ describe("Recommender â€” getSimilarProblems", () => {
   });
 });
 
-describe("Recommender â€” scoreCandidate", () => {
+describe("Recommender  scoreCandidate", () => {
   it("scores high tag overlap above low tag overlap", () => {
     const query     = { title: "Two Sum", difficulty: "Easy", tags: ["Array","Hash Table"] };
     const highMatch = { title: "Contains Duplicate", difficulty: "Easy",   tags: ["Array","Hash Table"], keywords: ["duplicate","hash"], link: "" };

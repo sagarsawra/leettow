@@ -1,5 +1,5 @@
 ﻿/**
- * config/logger.js â€” Structured JSON logger.
+ * config/logger.js  Structured JSON logger.
  * Drop-in replaceable with Winston/Pino without changing callers.
  */
 const config = require("./index");

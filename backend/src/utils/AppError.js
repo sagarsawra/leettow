@@ -1,5 +1,5 @@
 ﻿/**
- * AppError.js â€” Domain error with HTTP status code.
+ * AppError.js  Domain error with HTTP status code.
  */
 class AppError extends Error {
   constructor(message, statusCode = 500, isOperational = true) {

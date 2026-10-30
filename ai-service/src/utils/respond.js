@@ -1,5 +1,5 @@
 ﻿/**
- * respond.js â€” Consistent API response envelope.
+ * respond.js  Consistent API response envelope.
  */
 function ok(res, data, status = 200) {
   return res.status(status).json({ success: true, data });

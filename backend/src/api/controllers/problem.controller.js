@@ -1,5 +1,5 @@
 ﻿/**
- * problem.controller.js â€” Handles POST /api/problem/analyze.
+ * problem.controller.js  Handles POST /api/problem/analyze.
  */
 const { validateAnalyzeProblem } = require("../validators/problem.validator");
 const problemService             = require("../../services/problemService");

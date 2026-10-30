@@ -1,5 +1,5 @@
 ﻿/**
- * requestLogger.js â€” Attaches a unique request ID for log tracing.
+ * requestLogger.js  Attaches a unique request ID for log tracing.
  */
 const { randomUUID } = require("crypto");
 const logger         = require("../../config/logger");

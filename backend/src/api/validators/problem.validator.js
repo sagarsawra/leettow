@@ -1,5 +1,5 @@
 ﻿/**
- * problem.validator.js â€” Joi schema for problem analysis requests.
+ * problem.validator.js  Joi schema for problem analysis requests.
  */
 const Joi = require("joi");
 

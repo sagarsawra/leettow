@@ -1,7 +1,7 @@
 {
   "name": "leettow-ai-service",
   "version": "1.0.0",
-  "description": "LeetTow AI microservice â€” generates structured, no-spoiler hints for coding problems",
+  "description": "LeetTow AI microservice  generates structured, no-spoiler hints for coding problems",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

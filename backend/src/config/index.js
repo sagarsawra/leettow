@@ -1,5 +1,5 @@
 ﻿/**
- * config/index.js â€” Single source of truth for runtime configuration.
+ * config/index.js  Single source of truth for runtime configuration.
  */
 require("dotenv").config();
 
